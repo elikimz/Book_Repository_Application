@@ -9,7 +9,8 @@ interface Book {
   type Action =
     | { type: 'ADD_BOOK'; book: Book }
     | { type: 'UPDATE_BOOK'; book: Book }
-    | { type: 'DELETE_BOOK'; id: number };
+    | { type: 'DELETE_BOOK'; id: number }
+    | { type: 'SET_BOOKS'; books: Book[] };
   
   function bookReducer(state: Book[], action: Action): Book[] {
     switch (action.type) {
