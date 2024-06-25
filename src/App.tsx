@@ -1,4 +1,3 @@
-// src/App.tsx
 import React, { useState, useReducer, useRef, useEffect, useCallback } from 'react';
 import useLocalStorage from './userLocalStorage';
 import bookReducer from './bookReducer';
@@ -99,12 +98,14 @@ function App() {
             <h2>{book.title}</h2>
             <p><strong>Author:</strong> {book.author}</p>
             <p><strong>Year:</strong> {book.year}</p>
-            <button onClick={() => handleEditBook(book.id)}>Edit</button>
-            <button onClick={() => handleDeleteBook(book.id)}>Delete</button>
+            <div className="button">
+              <button onClick={() => handleEditBook(book.id)}>Edit</button>
+              <button onClick={() => handleDeleteBook(book.id)}>Delete</button>
+            </div>
           </div>
         ))}
       </div>
-      <div className="pagination">
+      <div className="page">
         <button onClick={handlePreviousPage} disabled={currentPage === 1}>
           Previous
         </button>
